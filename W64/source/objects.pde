@@ -1,4 +1,32 @@
 
+// ====== Etoiles (Bg) ================================================================
+
+class Etoile {
+  PVector location;
+  int hauteur;
+  float largueur;
+  PVector vitesse;
+
+  Etoile(float temp_x, float temp_y, PVector temp_vitesse) {
+    location = new PVector(temp_x, temp_y);
+    hauteur=12;
+    largueur=3;
+    vitesse= temp_vitesse;
+  }
+
+  void afficher() {
+    fill(75);
+    rectMode(CENTER);
+    rect(location.x,location.y,largueur,hauteur);
+    smooth();
+  }
+
+  void deplacer() {
+    location.add(vitesse);
+  }  
+} 
+
+
 // ====== Asteroides ================================================================
 
 class Asteroid {

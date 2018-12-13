@@ -1,6 +1,23 @@
 void Game() {
   smooth();
-  background(bg);
+  //fill(0, 0, 0, 75);
+  fill(0, 0, 0, 120);
+  
+  rect(width/2,height/2, width, height);
+  
+  for (int i=0; i<nb_Etoiles; i++) {
+    vitesse_etoile = new PVector(0, random(5,15));
+    etoiles.add(new Etoile(random(0,width), -100, vitesse_etoile));
+    
+    Etoile Etoile = etoiles.get(i);
+
+    if (Etoile.location.y > height+15) {
+      etoiles.remove(i);
+    }
+
+    Etoile.afficher();
+    Etoile.deplacer();
+  }
 
   if (flag_start == true) {    
     vitesse_ast = new PVector(0, random(vitesse_min, vitesse_max));
@@ -14,6 +31,11 @@ void Game() {
 
   if (intervalometre.verifierIntervalle()) {
     seconde = seconde + 1;
+    
+    if(seconde % 20 == 0){
+      redraw();
+    }
+    
     if (seconde % temps_pop_ast == 0) {
       vitesse_ast = new PVector(0, random(vitesse_min, vitesse_max));
       asteroids.add(new Asteroid(random(v.rayon, width-v.rayon), 1000, vitesse_ast));
@@ -95,7 +117,8 @@ void Game() {
 
 
   if (flag_toucher == true) {
-    bg = color(#ff0000);
+    fill(255, 0, 0, 255);
+    rect(width/2,height/2, width, height);
     flag_vies = true;
   } else {
     bg = color(#000000);

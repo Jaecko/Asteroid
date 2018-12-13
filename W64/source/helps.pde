@@ -13,9 +13,10 @@ void Help(){
   textSize(32);
   fill(#ffffff);
   textAlign(CENTER);
-  text("Déplacement :", 400, 300);
-  text("Flèches directionnelles ou ZQSD", 400, 350);
-  text("P : Pause", 400, 400);
+  text("Déplacement :", 400, 250);
+  text("Flèches directionnelles ou ZQSD", 400, 300);
+  text("P : Pause", 400, 350);
+  text("F12 : Screenshot", 400, 400);
     
   textSize(24);
   fill(#ffffff);
@@ -41,6 +42,7 @@ void Commands(){
   text("Flèches directionnelles ou ZQSD", 400, 300);
   text("P : Pause", 400, 350);
   text("F1 : Aide", 400, 400);
+  text("F12 : Screenshot", 400, 450);
     
   textSize(24);
   fill(#ffffff);
